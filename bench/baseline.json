@@ -2,6 +2,7 @@
   "benchmark": "rollup over a simulated fleet month",
   "events": 144000,
   "rollups": 6000,
-  "rollups_per_sec": 1000.0,
-  "note": "placeholder floor; replaced with a CI-measured value"
+  "best_ms": 242.593,
+  "rollups_per_sec": 24732.8,
+  "note": "measured on a GitHub Actions ubuntu-latest runner, temurin 21"
 }
