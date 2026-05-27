@@ -21,7 +21,7 @@
     <java.version>21</java.version>
     <testcontainers.version>1.21.3</testcontainers.version>
     <spotless.version>2.43.0</spotless.version>
-    <jacoco.line.coverage>0.70</jacoco.line.coverage>
+    <jacoco.line.coverage>0.80</jacoco.line.coverage>
   </properties>
 
   <dependencies>
