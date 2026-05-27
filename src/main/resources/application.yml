@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: equipfleet
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equipfleet}
+    username: ${SPRING_DATASOURCE_USERNAME:equipfleet}
+    password: ${SPRING_DATASOURCE_PASSWORD:equipfleet}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+
+equipfleet:
+  report-job:
+    cron: "0 30 0 * * *"
+  seed:
+    enabled: ${EQUIPFLEET_SEED_ENABLED:false}
+    assets: 8
+    days: 2
+    changes-per-day: 12
+
+server:
+  port: 8080
