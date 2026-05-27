@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: equipfleet
+      POSTGRES_USER: equipfleet
+      POSTGRES_PASSWORD: equipfleet
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U equipfleet"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/equipfleet
+      SPRING_DATASOURCE_USERNAME: equipfleet
+      SPRING_DATASOURCE_PASSWORD: equipfleet
+      EQUIPFLEET_SEED_ENABLED: "true"
+    ports:
+      - "8080:8080"
