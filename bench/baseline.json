@@ -1,0 +1,7 @@
+{
+  "benchmark": "rollup over a simulated fleet month",
+  "events": 144000,
+  "rollups": 6000,
+  "rollups_per_sec": 1000.0,
+  "note": "placeholder floor; replaced with a CI-measured value"
+}
