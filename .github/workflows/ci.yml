@@ -47,7 +47,7 @@ jobs:
           java-version: "21"
           cache: maven
       - name: end to end api check
-        run: mvn -B -ntp -Dtest=none -Dit.test=EquipFleetApiIT -DfailIfNoTests=false -Djacoco.line.coverage=0.0 verify
+        run: mvn -B -ntp -Dtest=none -Dsurefire.failIfNoSpecifiedTests=false -Dit.test=EquipFleetApiIT -DfailIfNoTests=false -Djacoco.line.coverage=0.0 verify
 
   build-images:
     runs-on: ubuntu-latest
